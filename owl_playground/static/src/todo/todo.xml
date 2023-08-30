@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.todo" owl="1">
+        <div>
+            <t t-att-class="{'text-muted': todo.done, 'text-decoration-line-through': todo.done}">
+                <t t-esc="todo.id"/>. 
+                <t t-esc="todo.description"/>
+            </t>
+        </div>
+    </t>
+</templates>
