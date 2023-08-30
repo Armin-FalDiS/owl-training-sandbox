@@ -2,7 +2,7 @@
 
 import { Component } from '@odoo/owl';
 
-export class ToDo extends Component {
+export class Todo extends Component {
     static template = 'owl_playground.todo';
     static props = {
         todo: {
