@@ -10,7 +10,6 @@ export class TodoList extends Component {
 
     setup() {
         this.state = useState({ todoList: [], counter: 1 });
-
         useAutofocus('todoInput');
     }
 
@@ -26,7 +25,16 @@ export class TodoList extends Component {
     }
 
     toggleDone(id) {
-        const task = this.state.todoList[id - 1];
-        task.done = !task.done;
+        const task = this.state.todoList.find((x) => x.id == id);
+        if (task) {
+            task.done = !task.done;
+        }
+    }
+
+    removeTodo(id) {
+        const taskIndex = this.state.todoList.findIndex((x) => x.id == id);
+        if (taskIndex != -1) {
+            this.state.todoList.splice(taskIndex, 1);
+        }
     }
 }

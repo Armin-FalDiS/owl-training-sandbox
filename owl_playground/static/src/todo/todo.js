@@ -16,5 +16,8 @@ export class Todo extends Component {
         toggleDone: {
             type: Function,
         },
+        removeTodo: {
+            type: Function,
+        },
     };
 }
