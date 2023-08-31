@@ -2,6 +2,11 @@
 <templates xml:space="preserve">
     <t t-name="owl_playground.playground" owl="1">
         <Counter/>
+        <Card>
+            <t t-set-slot="title">Card title</t>
+            <p class="card-text">Some quick example text...</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </Card>
         <TodoList/>
     </t>
 </templates>
