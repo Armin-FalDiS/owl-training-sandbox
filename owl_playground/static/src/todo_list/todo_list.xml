@@ -2,7 +2,8 @@
 <templates xml:space="preserve">
     <t t-name="owl_playground.todo_list" owl="1">
         <div>
-            <t t-foreach="props.todoList" t-as="todo" t-key="todo.id">
+            <input t-on-keyup="addTodo"/>
+            <t t-foreach="state.todoList" t-as="todo" t-key="todo.id">
                 <Todo todo="todo"/>
             </t>
         </div>

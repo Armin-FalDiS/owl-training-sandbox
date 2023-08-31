@@ -2,6 +2,6 @@
 <templates xml:space="preserve">
     <t t-name="owl_playground.playground" owl="1">
         <Counter/>
-        <TodoList todoList="[{ 'id': 3, 'description': 'buy milk', 'done': false }]"/>
+        <TodoList/>
     </t>
 </templates>
