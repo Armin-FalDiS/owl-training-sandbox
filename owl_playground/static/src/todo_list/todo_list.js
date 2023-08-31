@@ -1,7 +1,8 @@
 /** @odoo-module **/
 
-import { Component, useState } from '@odoo/owl';
+import { Component, useState, useRef } from '@odoo/owl';
 import { Todo } from '../todo/todo';
+import { useAutofocus } from '../utils';
 
 export class TodoList extends Component {
     static template = 'owl_playground.todo_list';
@@ -9,6 +10,8 @@ export class TodoList extends Component {
 
     setup() {
         this.state = useState({ todoList: [], counter: 1 });
+
+        useAutofocus('todoInput');
     }
 
     addTodo(event) {
