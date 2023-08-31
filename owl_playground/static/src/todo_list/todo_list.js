@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, useState, useRef } from '@odoo/owl';
+import { Component, useState } from '@odoo/owl';
 import { Todo } from '../todo/todo';
 import { useAutofocus } from '../utils';
 
@@ -16,15 +16,17 @@ export class TodoList extends Component {
 
     addTodo(event) {
         if (event.target.value && event.keyCode == 13) {
-            this.state.todoList = [
-                ...this.state.todoList,
-                {
-                    id: this.state.counter++,
-                    description: event.target.value,
-                    done: false,
-                },
-            ];
+            this.state.todoList.push({
+                id: this.state.counter++,
+                description: event.target.value,
+                done: false,
+            });
             event.target.value = null;
         }
+    }
+
+    toggleDone(id) {
+        const task = this.state.todoList[id - 1];
+        task.done = !task.done;
     }
 }

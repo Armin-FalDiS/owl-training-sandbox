@@ -13,5 +13,8 @@ export class Todo extends Component {
                 done: Boolean,
             },
         },
+        toggleDone: {
+            type: Function,
+        },
     };
 }
