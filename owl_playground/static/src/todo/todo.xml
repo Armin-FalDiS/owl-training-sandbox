@@ -2,13 +2,15 @@
 <templates xml:space="preserve">
     <t t-name="owl_playground.todo" owl="1">
         <div>
-            <span class="fa fa-remove" t-on-click="() => props.removeTodo(props.todo.id)"/>
             <span t-on-click="() => props.toggleDone(props.todo.id)"
                  t-att-class="{'text-muted': props.todo.done, 'text-decoration-line-through': props.todo.done}">
-                <input type="checkbox" t-att-checked="props.todo.done"/>
-                <t t-esc="props.todo.id"/>. 
-                <t t-esc="props.todo.description"/>
-            </span>
+                <input class="form-check-input" type="checkbox" t-att-checked="props.todo.done"/>
+                <label class="form-check-label px-2">
+                    <t t-esc="props.todo.id"/>. 
+                    <t t-esc="props.todo.description"/>
+                </label>
+            </span>        
+            <span class="fa fa-remove px-4" t-on-click="() => props.removeTodo(props.todo.id)"/>
         </div>
     </t>
 </templates>
