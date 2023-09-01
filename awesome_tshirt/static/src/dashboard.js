@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, useSubEnv } from '@odoo/owl';
+import { Component, onWillStart, useState, useSubEnv } from '@odoo/owl';
 import { registry } from '@web/core/registry';
 import { Layout } from '@web/search/layout';
 import { getDefaultConfig } from '@web/views/view';
@@ -15,6 +15,18 @@ class AwesomeDashboard extends Component {
         useSubEnv({ config: { ...getDefaultConfig(), ...this.env.config } });
 
         this.action = useService('action');
+        const service = useService('tShirtService');
+
+        this.stats = useState(service.stats);
+
+        this.statTitles = {
+            average_quantity: 'Average amount of t-shirt by order this month',
+            average_time:
+                'Average time for an order to go from "new" to "sent" or "cancelled"',
+            nb_cancelled_orders: 'Number of cancelled orders this month',
+            nb_new_orders: 'Number of new orders this month',
+            total_amount: 'Total amount of new orders this month',
+        };
     }
 
     openCustomers() {

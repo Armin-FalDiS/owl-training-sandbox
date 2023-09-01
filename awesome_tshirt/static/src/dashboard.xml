@@ -7,6 +7,22 @@
                 <button t-on-click="openRecentOrders" type="button" class="btn btn-primary">Recent Orders</button>
                 <button t-on-click="openRecentCancelledOrders" type="button" class="btn btn-primary">Recent Cancelled Orders</button>
             </t>
+            <div class="row">
+                <t t-foreach="statTitles" t-as="stat" t-key="stat">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <t t-esc="statTitles[stat]"/>
+                                </h5>
+                                <p class="card-text">
+                                    <t t-esc="stats[stat]"/>
+                                </p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </div>
         </Layout>
     </t>
 </templates>
