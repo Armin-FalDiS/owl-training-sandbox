@@ -1,24 +1,23 @@
 /** @odoo-module **/
 
-import { Component, onWillStart, useState, useSubEnv } from '@odoo/owl';
+import { Component, useState, useSubEnv } from '@odoo/owl';
 import { registry } from '@web/core/registry';
 import { Layout } from '@web/search/layout';
 import { getDefaultConfig } from '@web/views/view';
 import { useService } from '@web/core/utils/hooks';
 import { Domain } from '@web/core/domain';
+import { PieChart } from './pie_chart';
 
 class AwesomeDashboard extends Component {
     static template = 'awesome_tshirt.clientaction';
-    static components = { Layout };
+    static components = { Layout, PieChart };
 
     setup() {
         useSubEnv({ config: { ...getDefaultConfig(), ...this.env.config } });
-
         this.action = useService('action');
+
         const service = useService('tShirtService');
-
         this.stats = useState(service.stats);
-
         this.statTitles = {
             average_quantity: 'Average amount of t-shirt by order this month',
             average_time:

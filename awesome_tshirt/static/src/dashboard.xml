@@ -23,6 +23,16 @@
                     </t>
                 </t>
             </div>
+            <div class="m-3">
+                <div class="card" className="'w-25'">
+                    <div class="card-body">
+                        <h5 class="card-title">Shirt orders by size</h5>
+                        <p class="card-text">
+                            <PieChart data="stats['orders_by_size']" label="'Shirt orders by size'"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </Layout>
     </t>
 </templates>
