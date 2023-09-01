@@ -4,6 +4,8 @@
         <Layout display="{controlPanel: { 'top-right': false, 'bottom-right': false } }">                
             <t t-set-slot="control-panel-bottom-left">
                 <button t-on-click="openCustomers" type="button" class="btn btn-primary">Customers</button>
+                <button t-on-click="openRecentOrders" type="button" class="btn btn-primary">Recent Orders</button>
+                <button t-on-click="openRecentCancelledOrders" type="button" class="btn btn-primary">Recent Cancelled Orders</button>
             </t>
         </Layout>
     </t>
